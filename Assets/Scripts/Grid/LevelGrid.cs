@@ -65,7 +65,6 @@ public class LevelGrid : MonoBehaviour
                     )
                 )
                 {
-                    Debug.Log("Hit something!");
                     BuildCell buildCell = GetBuildCellAtPosition(x, z);
                     buildCell.SetIsOccupied(true);
                 }
