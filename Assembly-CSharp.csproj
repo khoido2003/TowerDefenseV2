@@ -47,13 +47,19 @@
     <Analyzer Include="D:\unity\Editor\6000.2.0b11\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ScriptableObjects\TowerTypeListSO.cs" />
     <Compile Include="Assets\Scripts\Grid\BuildCell.cs" />
+    <Compile Include="Assets\Scripts\UI\CardUI.cs" />
     <Compile Include="Assets\Scripts\Grid\GridDebugObject.cs" />
     <Compile Include="Assets\Scripts\Grid\GridSystem.cs" />
     <Compile Include="Assets\Scripts\Utils\InputManager.cs" />
     <Compile Include="Assets\Scripts\Utils\MouseWorld.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\UI\ContainerCardSelectedUI.cs" />
+    <Compile Include="Assets\Scripts\Towers\ConstructionTower.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\TowerTypeSO.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IGridCell.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Grid\LevelGrid.cs" />
   </ItemGroup>

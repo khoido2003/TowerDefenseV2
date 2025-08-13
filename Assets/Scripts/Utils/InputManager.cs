@@ -67,4 +67,9 @@ public class InputManager : MonoBehaviour
     {
         return Input.mouseScrollDelta.y;
     }
+
+    public bool GetLeftMouseClick()
+    {
+        return Input.GetMouseButtonDown(0);
+    }
 }

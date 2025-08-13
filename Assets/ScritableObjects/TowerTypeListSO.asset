@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d095becbedaa7c84780e49225e1a056f, type: 3}
+  m_Name: TowerTypeListSO
+  m_EditorClassIdentifier: Assembly-CSharp::TowerTypeListSO
+  towerSOList:
+  - {fileID: 11400000, guid: 513bb93dcfad7804da24339b61adb4e1, type: 2}
+  - {fileID: 11400000, guid: 1f62fe7de3699e041af4c7c6130ace5a, type: 2}
+  - {fileID: 11400000, guid: a52a880e1653259439fa258bd4f3394f, type: 2}
+  - {fileID: 11400000, guid: 9756828c77f2e8142913b8b849b3f367, type: 2}
+  - {fileID: 11400000, guid: 3610ce660759a4c47832bc5ba1186c7d, type: 2}

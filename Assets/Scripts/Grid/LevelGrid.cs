@@ -72,8 +72,40 @@ public class LevelGrid : MonoBehaviour
         }
     }
 
-    private BuildCell GetBuildCellAtPosition(int x, int z)
+    public BuildCell GetBuildCellAtPosition(int x, int z)
     {
         return buildGrid.GetGridCell(x, z);
+    }
+
+    public Vector3 GetSnappedWorldPosition(Vector3 worldPosition)
+    {
+        Vector2 gridPosition = buildGrid.GetGridPosition(worldPosition);
+        return buildGrid.GetWorldPosition(gridPosition);
+    }
+
+    public bool CanBuildAtGridPosition(Vector3 worldPosition)
+    {
+        Vector2 gridPosition = buildGrid.GetGridPosition(worldPosition);
+
+        if (
+            gridPosition.x < 0
+            || gridPosition.x >= width
+            || gridPosition.y < 0
+            || gridPosition.y >= height
+        )
+        {
+            return false;
+        }
+
+        BuildCell cell = buildGrid.GetGridCell((int)gridPosition.x, (int)gridPosition.y);
+
+        return !cell.GetIsOccupied();
+    }
+
+    public void SetOccupied(Vector3 worldPosition, bool occupied)
+    {
+        Vector2 gridPos = buildGrid.GetGridPosition(worldPosition);
+        BuildCell cell = buildGrid.GetGridCell((int)gridPos.x, (int)gridPos.y);
+        cell.SetIsOccupied(occupied);
     }
 }
