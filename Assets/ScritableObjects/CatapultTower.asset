@@ -15,6 +15,7 @@ MonoBehaviour:
   nameString: Catapult Tower
   completePhasePrefab: {fileID: 2587774431444320194, guid: da13b98eb37173c4e95056e581665cdf, type: 3}
   constructionPhasePrefab: {fileID: 7249590533760790696, guid: 0a6f1ea2ccaf35b4cb75be0a1ba8bb59, type: 3}
+  ghostTower: {fileID: 2587774431444320194, guid: c21cc4e485e475a4e91aa4b238b34dd0, type: 3}
   sprite: {fileID: 21300000, guid: 7b2297015d665c34593926a86f7b4933, type: 3}
   healthAmountMax: 100
   cost: 50

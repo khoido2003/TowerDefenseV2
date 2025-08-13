@@ -15,6 +15,7 @@ MonoBehaviour:
   nameString: Cannon Tower
   completePhasePrefab: {fileID: 5047075700709808640, guid: 67936645e36c89c409116a4f47789691, type: 3}
   constructionPhasePrefab: {fileID: 7249590533760790696, guid: 0a6f1ea2ccaf35b4cb75be0a1ba8bb59, type: 3}
+  ghostTower: {fileID: 5047075700709808640, guid: 38bf29754e7b5454e9c1a3e3a9362b4e, type: 3}
   sprite: {fileID: 21300000, guid: afd5da77be1fbe24dbfcb8c88502b652, type: 3}
   healthAmountMax: 100
   cost: 10

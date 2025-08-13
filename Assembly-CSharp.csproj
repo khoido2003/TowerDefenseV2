@@ -50,6 +50,7 @@
     <Compile Include="Assets\Scripts\ScriptableObjects\TowerTypeListSO.cs" />
     <Compile Include="Assets\Scripts\Grid\BuildCell.cs" />
     <Compile Include="Assets\Scripts\UI\CardUI.cs" />
+    <Compile Include="Assets\Scripts\Towers\GhostTower.cs" />
     <Compile Include="Assets\Scripts\Grid\GridDebugObject.cs" />
     <Compile Include="Assets\Scripts\Grid\GridSystem.cs" />
     <Compile Include="Assets\Scripts\Utils\InputManager.cs" />

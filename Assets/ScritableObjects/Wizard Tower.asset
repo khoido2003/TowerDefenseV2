@@ -15,6 +15,7 @@ MonoBehaviour:
   nameString: Wizard Tower
   completePhasePrefab: {fileID: 46971838086435191, guid: e233ccbfbd0331b4aa1a94e849fb301f, type: 3}
   constructionPhasePrefab: {fileID: 7249590533760790696, guid: 0a6f1ea2ccaf35b4cb75be0a1ba8bb59, type: 3}
+  ghostTower: {fileID: 46971838086435191, guid: 32eb0902903fd284d977b33f6c09fcb8, type: 3}
   sprite: {fileID: 21300000, guid: 2fe2838073d6bda49aebd2c494814e47, type: 3}
   healthAmountMax: 100
   cost: 100

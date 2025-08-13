@@ -15,6 +15,7 @@ MonoBehaviour:
   nameString: Archer Tower
   completePhasePrefab: {fileID: 7531685466107050823, guid: 3239eac7252e0ea4b9cd4263b93fa140, type: 3}
   constructionPhasePrefab: {fileID: 7249590533760790696, guid: 0a6f1ea2ccaf35b4cb75be0a1ba8bb59, type: 3}
+  ghostTower: {fileID: 7531685466107050823, guid: e5960c8108c072142ac766993ec6fb08, type: 3}
   sprite: {fileID: 21300000, guid: b9378b8978cdff743ad6948badda9d5f, type: 3}
   healthAmountMax: 100
   cost: 30

@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerManager : MonoBehaviour
 {
@@ -6,6 +8,13 @@ public class TowerManager : MonoBehaviour
 
     [SerializeField]
     private TowerTypeSO activeTowerType;
+
+    public event EventHandler<OnActiveTowerTypeChangedArgs> OnActiveTowerTypeChanged;
+
+    public class OnActiveTowerTypeChangedArgs
+    {
+        public TowerTypeSO activeTowerType;
+    }
 
     private void Awake()
     {
@@ -19,6 +28,12 @@ public class TowerManager : MonoBehaviour
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            // Mouse is over UI, so ignore map building
+            return;
+        }
+
         if (InputManager.Instance.GetLeftMouseClick())
         {
             Vector3 mouseWorldPos = MouseWorld.Instance.GetWorldPosition();
@@ -34,5 +49,16 @@ public class TowerManager : MonoBehaviour
                 Debug.Log("Can't build here!");
             }
         }
+    }
+
+    public void SetActiveTowerType(TowerTypeSO activeTowerType)
+    {
+        this.activeTowerType = activeTowerType;
+
+        // Trigger ghost building
+        OnActiveTowerTypeChanged?.Invoke(
+            this,
+            new OnActiveTowerTypeChangedArgs { activeTowerType = activeTowerType }
+        );
     }
 }
