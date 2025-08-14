@@ -61,4 +61,9 @@ public class TowerManager : MonoBehaviour
             new OnActiveTowerTypeChangedArgs { activeTowerType = activeTowerType }
         );
     }
+
+    public TowerTypeSO GetActiveTowerType()
+    {
+        return activeTowerType;
+    }
 }

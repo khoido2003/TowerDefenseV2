@@ -40,7 +40,10 @@ public class LevelGrid : MonoBehaviour
             }
         );
 
+        // DEBUG MODE
         // buildGrid.ShowGridDebugObject(buildCellPrefab);
+
+
         Setup();
     }
 
@@ -87,19 +90,36 @@ public class LevelGrid : MonoBehaviour
     {
         Vector2 gridPosition = buildGrid.GetGridPosition(worldPosition);
 
+        TowerTypeSO activeTowerType = TowerManager.Instance.GetActiveTowerType();
+        Vector2Int footprintSize = activeTowerType.footPrintSize;
+
+        int startX = (int)gridPosition.x;
+        int startY = (int)gridPosition.y;
+
         if (
-            gridPosition.x < 0
-            || gridPosition.x >= width
-            || gridPosition.y < 0
-            || gridPosition.y >= height
+            startX < 0
+            || startY < 0
+            || startX + footprintSize.x > width
+            || startY + footprintSize.y > height
         )
         {
             return false;
         }
 
-        BuildCell cell = buildGrid.GetGridCell((int)gridPosition.x, (int)gridPosition.y);
+        for (int x = 0; x < footprintSize.x; x++)
+        {
+            for (int y = 0; y < footprintSize.y; y++)
+            {
+                BuildCell cell = buildGrid.GetGridCell(startX + x, startY + y);
 
-        return !cell.GetIsOccupied();
+                if (cell.GetIsOccupied())
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     public void SetOccupied(Vector3 worldPosition, bool occupied)

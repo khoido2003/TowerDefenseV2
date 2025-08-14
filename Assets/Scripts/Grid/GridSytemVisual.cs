@@ -68,6 +68,8 @@ public class GridSytemVisual : MonoBehaviour
         // Shift start position so the footprint is centered
         Vector3 centeredStartPosition = startWorldPosition - footprintOffset;
 
+        bool canBuild = LevelGrid.Instance.CanBuildAtGridPosition(centeredStartPosition);
+
         int index = 0;
 
         for (int x = 0; x < footprintSize.x; x++)
@@ -83,8 +85,6 @@ public class GridSytemVisual : MonoBehaviour
                 Vector3 gridCellWorldPosition = LevelGrid.Instance.GetSnappedWorldPosition(
                     centeredStartPosition + LevelGrid.Instance.GetWorldPosition(gridCellPosition)
                 );
-
-                bool canBuild = LevelGrid.Instance.CanBuildAtGridPosition(gridCellWorldPosition);
 
                 pooledGridCellVisuals[index].transform.position = gridCellWorldPosition;
                 pooledGridCellVisuals[index].Show(canBuild ? validMaterial : invalidMaterial);
