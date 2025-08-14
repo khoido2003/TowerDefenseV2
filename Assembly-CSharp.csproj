@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ScriptableObjects\TowerTypeListSO.cs" />
     <Compile Include="Assets\Scripts\Grid\BuildCell.cs" />
+    <Compile Include="Assets\Scripts\Grid\GridSytemVisual.cs" />
     <Compile Include="Assets\Scripts\UI\CardUI.cs" />
     <Compile Include="Assets\Scripts\Towers\GhostTower.cs" />
     <Compile Include="Assets\Scripts\Grid\GridDebugObject.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Assets\Scripts\Towers\ConstructionTower.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\TowerTypeSO.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IGridCell.cs" />
+    <Compile Include="Assets\Scripts\Grid\GridCellVisual.cs" />
     <Compile Include="Assets\Scripts\Towers\TowerManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Grid\LevelGrid.cs" />

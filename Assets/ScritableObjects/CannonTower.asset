@@ -19,3 +19,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: afd5da77be1fbe24dbfcb8c88502b652, type: 3}
   healthAmountMax: 100
   cost: 10
+  footPrintSize: {x: 3, y: 3}

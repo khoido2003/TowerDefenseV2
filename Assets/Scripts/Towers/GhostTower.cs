@@ -29,7 +29,14 @@ public class GhostTower : MonoBehaviour
         {
             Vector3 mouseWorldPos = MouseWorld.Instance.GetWorldPosition();
             currentGhostInstance.position = mouseWorldPos;
+
+            GridSytemVisual.Instance.ShowFootPrint(mouseWorldPos, activeTowerType.footPrintSize);
         }
+    }
+
+    private void OnDisable()
+    {
+        GridSytemVisual.Instance.HideAll();
     }
 
     private void TowerManager_OnActiveTowerTypeChanged(
@@ -59,6 +66,7 @@ public class GhostTower : MonoBehaviour
         {
             currentGhostInstance.gameObject.SetActive(false);
         }
+        GridSytemVisual.Instance.HideAll();
     }
 
     public void Show()

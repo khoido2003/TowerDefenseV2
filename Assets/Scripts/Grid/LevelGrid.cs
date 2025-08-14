@@ -40,7 +40,7 @@ public class LevelGrid : MonoBehaviour
             }
         );
 
-        buildGrid.ShowGridDebugObject(buildCellPrefab);
+        // buildGrid.ShowGridDebugObject(buildCellPrefab);
         Setup();
     }
 
@@ -107,5 +107,30 @@ public class LevelGrid : MonoBehaviour
         Vector2 gridPos = buildGrid.GetGridPosition(worldPosition);
         BuildCell cell = buildGrid.GetGridCell((int)gridPos.x, (int)gridPos.y);
         cell.SetIsOccupied(occupied);
+    }
+
+    public float GetCellSize()
+    {
+        return cellSize;
+    }
+
+    public int GetHeight()
+    {
+        return height;
+    }
+
+    public int GetWidth()
+    {
+        return width;
+    }
+
+    public Vector3 GetWorldPosition(Vector2 gridPosition)
+    {
+        return buildGrid.GetWorldPosition(gridPosition);
+    }
+
+    public Vector2 GetGridPosition(Vector3 worldPosition)
+    {
+        return buildGrid.GetGridPosition(worldPosition);
     }
 }

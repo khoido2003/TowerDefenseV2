@@ -11,4 +11,5 @@ public class TowerTypeSO : ScriptableObject
     public Sprite sprite;
     public int healthAmountMax;
     public int cost;
+    public Vector2Int footPrintSize;
 }
