@@ -20,4 +20,4 @@ MonoBehaviour:
   healthAmountMax: 100
   cost: 100
   footPrintSize: {x: 3, y: 3}
-  constructionTimerMax: 2
+  constructionTimerMax: 10

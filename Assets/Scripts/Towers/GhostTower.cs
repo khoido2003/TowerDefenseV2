@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GhostTower : MonoBehaviour
 {
@@ -25,6 +26,13 @@ public class GhostTower : MonoBehaviour
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            Hide();
+            GridSytemVisual.Instance.HideAll();
+            return;
+        }
+
         if (currentGhostInstance != null)
         {
             Vector3 mouseWorldPos = MouseWorld.Instance.GetWorldPosition();
