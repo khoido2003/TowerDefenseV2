@@ -12,4 +12,5 @@ public class TowerTypeSO : ScriptableObject
     public int healthAmountMax;
     public int cost;
     public Vector2Int footPrintSize;
+    public float constructionTimerMax;
 }

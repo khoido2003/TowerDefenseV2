@@ -24,7 +24,10 @@ public class TowerManager : MonoBehaviour
         }
 
         Instance = this;
+        SetActiveTowerType(activeTowerType);
     }
+
+    private void Start() { }
 
     private void Update()
     {
@@ -42,6 +45,7 @@ public class TowerManager : MonoBehaviour
             if (LevelGrid.Instance.CanBuildAtGridPosition(snappedPos))
             {
                 ConstructionTower.SpawnConstructionTower(snappedPos, activeTowerType);
+
                 LevelGrid.Instance.SetOccupied(snappedPos, true);
             }
             else

@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249590533760790696}
-  m_Layer: 0
+  - component: {fileID: 7917692754677049179}
+  - component: {fileID: 1953963064332755752}
+  m_Layer: 7
   m_Name: pfConstructionTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,8 +44,42 @@ Transform:
   - {fileID: 3796073570167339940}
   - {fileID: 5267647658145420349}
   - {fileID: 2632275459161627529}
+  - {fileID: 3272995454319815510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7917692754677049179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619294960998479816}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1953963064332755752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619294960998479816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26773174766f0c46b13fab5afc78190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConstructionTower
 --- !u!1001 &1157456459606646719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,6 +135,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b55b74b2e308eef4ba9a2c7bd080cc65, type: 3}
       propertyPath: m_Name
       value: weapon-ammo-arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b55b74b2e308eef4ba9a2c7bd080cc65, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -162,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: weapon-ammo-cannonball (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -171,6 +215,112 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
   m_PrefabInstance: {fileID: 1633169866388894681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1682893282918652813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7249590533760790696}
+    m_Modifications:
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282466707824820120, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_Name
+      value: ProgressBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617094946240879300, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+--- !u!224 &3272995454319815510 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4194771550365462747, guid: c0c6746c282ca654f969eba00972914e, type: 3}
+  m_PrefabInstance: {fileID: 1682893282918652813}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1744903041619109527
 PrefabInstance:
@@ -223,6 +373,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
       propertyPath: m_Name
       value: weapon-ammo-cannonball (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -298,6 +452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spawn-round
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9fd7ea04dcfa2ae4b91e0c5e40a03630, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -359,6 +517,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 67733b754b3b32b4d8fdea0756ad6f33, type: 3}
       propertyPath: m_Name
       value: enemy-ufo-a
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67733b754b3b32b4d8fdea0756ad6f33, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -422,6 +584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: weapon-ammo-bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acaf56d855ed72d44be026776349b7ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -483,6 +649,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
       propertyPath: m_Name
       value: weapon-ammo-cannonball
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -550,6 +720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: weapon-ammo-arrow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b55b74b2e308eef4ba9a2c7bd080cc65, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -612,6 +786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: weapon-ammo-bullet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acaf56d855ed72d44be026776349b7ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -673,6 +851,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
       propertyPath: m_Name
       value: weapon-ammo-cannonball (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba18c11ccf8b40842a730e402d701070, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -748,6 +930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wood-structure-high
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da10f38b49175094899481ed4605b7f1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -810,6 +996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: weapon-ammo-bullet (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acaf56d855ed72d44be026776349b7ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -871,6 +1061,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 46dcea72da64899428cb641ec0770772, type: 3}
       propertyPath: m_Name
       value: spawn-square
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46dcea72da64899428cb641ec0770772, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
