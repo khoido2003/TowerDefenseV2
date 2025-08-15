@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GridSystem<TGridCell>
@@ -9,6 +10,8 @@ public class GridSystem<TGridCell>
     private float cellSize;
 
     private TGridCell[][] gridCellArray;
+
+    private List<Vector2Int> footPrintBuffers;
 
     public GridSystem(
         int width,
@@ -22,6 +25,7 @@ public class GridSystem<TGridCell>
         this.cellSize = cellSize;
 
         gridCellArray = new TGridCell[width][];
+        footPrintBuffers = new();
 
         for (int x = 0; x < width; x++)
         {
@@ -82,5 +86,39 @@ public class GridSystem<TGridCell>
     public int GetWidth()
     {
         return width;
+    }
+
+    public Vector3 GetWorldCenteredStartPosition(
+        Vector3 centerWorldPosition,
+        Vector2Int footprintSize
+    )
+    {
+        float halfCellX = (footprintSize.x - 1) / 2f;
+        float halfCellY = (footprintSize.y - 1) / 2f;
+
+        Vector3 offset = new Vector3(halfCellX * cellSize, 0, halfCellY * cellSize);
+
+        return centerWorldPosition - offset;
+    }
+
+    public List<Vector2Int> GetFootPrintCells(Vector3 centerWorldPosition, Vector2Int footprintSize)
+    {
+        footPrintBuffers.Clear();
+
+        Vector3 startPosition = GetWorldCenteredStartPosition(centerWorldPosition, footprintSize);
+
+        Vector2 startGridPosition = GetGridPosition(startPosition);
+
+        for (int x = 0; x < footprintSize.x; x++)
+        {
+            for (int z = 0; z < footprintSize.y; z++)
+            {
+                footPrintBuffers.Add(
+                    new Vector2Int((int)startGridPosition.x + x, (int)startGridPosition.y + z)
+                );
+            }
+        }
+
+        return footPrintBuffers;
     }
 }

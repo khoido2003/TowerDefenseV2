@@ -52,45 +52,26 @@ public class GridSytemVisual : MonoBehaviour
     {
         HideAll();
 
-        float cellSize = LevelGrid.Instance.GetCellSize();
+        List<Vector2Int> cells = LevelGrid
+            .Instance.GetBuildGrid()
+            .GetFootPrintCells(startWorldPosition, footprintSize);
 
-        // Number of cells from the center to one edge (half size)
-        float halfCellsX = (footprintSize.x - 1) / 2f;
-        float halfCellsZ = (footprintSize.y - 1) / 2f;
-
-        // Convert half cell counts into world space units
-        float offsetX = halfCellsX * cellSize;
-        float offsetZ = halfCellsZ * cellSize;
-
-        // The final offset vector to shift the footprint so it's centered
-        Vector3 footprintOffset = new Vector3(offsetX, 0, offsetZ);
-
-        // Shift start position so the footprint is centered
-        Vector3 centeredStartPosition = startWorldPosition - footprintOffset;
-
-        bool canBuild = LevelGrid.Instance.CanBuildAtGridPosition(centeredStartPosition);
+        BuildCheckResult result = LevelGrid.Instance.CanBuildAtGridPosition(startWorldPosition);
 
         int index = 0;
 
-        for (int x = 0; x < footprintSize.x; x++)
+        foreach (var cellPos in cells)
         {
-            for (int z = 0; z < footprintSize.y; z++)
+            if (index >= pooledGridCellVisuals.Count)
             {
-                // Only show the amount of grid visual needed of each building
-                if (index >= pooledGridCellVisuals.Count)
-                    return;
-
-                Vector2 gridCellPosition = new Vector2(x, z);
-
-                Vector3 gridCellWorldPosition = LevelGrid.Instance.GetSnappedWorldPosition(
-                    centeredStartPosition + LevelGrid.Instance.GetWorldPosition(gridCellPosition)
-                );
-
-                pooledGridCellVisuals[index].transform.position = gridCellWorldPosition;
-                pooledGridCellVisuals[index].Show(canBuild ? validMaterial : invalidMaterial);
-
-                index++;
+                return;
             }
+
+            Vector3 cellWorldPos = LevelGrid.Instance.GetWorldPosition(cellPos);
+            pooledGridCellVisuals[index].transform.position = cellWorldPos;
+            pooledGridCellVisuals[index].Show(result.canBuild ? validMaterial : invalidMaterial);
+
+            index++;
         }
     }
 

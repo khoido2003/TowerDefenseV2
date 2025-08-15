@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Towers\ConstructionTower.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\TowerTypeSO.cs" />
     <Compile Include="Assets\Scripts\Utils\LookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\Utils\BuildCheckResult.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IGridCell.cs" />
     <Compile Include="Assets\Scripts\Grid\GridCellVisual.cs" />
     <Compile Include="Assets\Scripts\Towers\TowerManager.cs" />

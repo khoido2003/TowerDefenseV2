@@ -42,7 +42,9 @@ public class TowerManager : MonoBehaviour
             Vector3 mouseWorldPos = MouseWorld.Instance.GetWorldPosition();
             Vector3 snappedPos = LevelGrid.Instance.GetSnappedWorldPosition(mouseWorldPos);
 
-            if (LevelGrid.Instance.CanBuildAtGridPosition(snappedPos))
+            BuildCheckResult result = LevelGrid.Instance.CanBuildAtGridPosition(snappedPos);
+
+            if (result.canBuild)
             {
                 ConstructionTower.SpawnConstructionTower(snappedPos, activeTowerType);
 
@@ -50,7 +52,7 @@ public class TowerManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Can't build here!");
+                Debug.Log($"Can't build here: {result.reason}");
             }
         }
     }

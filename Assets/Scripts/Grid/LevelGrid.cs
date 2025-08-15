@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGrid : MonoBehaviour
@@ -43,7 +44,6 @@ public class LevelGrid : MonoBehaviour
         // DEBUG MODE
         // buildGrid.ShowGridDebugObject(buildCellPrefab);
 
-
         Setup();
     }
 
@@ -86,40 +86,26 @@ public class LevelGrid : MonoBehaviour
         return buildGrid.GetWorldPosition(gridPosition);
     }
 
-    public bool CanBuildAtGridPosition(Vector3 worldPosition)
+    public BuildCheckResult CanBuildAtGridPosition(Vector3 worldPosition)
     {
-        Vector2 gridPosition = buildGrid.GetGridPosition(worldPosition);
-
         TowerTypeSO activeTowerType = TowerManager.Instance.GetActiveTowerType();
         Vector2Int footprintSize = activeTowerType.footPrintSize;
 
-        int startX = (int)gridPosition.x;
-        int startY = (int)gridPosition.y;
+        List<Vector2Int> footprintCells = buildGrid.GetFootPrintCells(worldPosition, footprintSize);
 
-        if (
-            startX < 0
-            || startY < 0
-            || startX + footprintSize.x > width
-            || startY + footprintSize.y > height
-        )
+        foreach (var cellPos in footprintCells)
         {
-            return false;
-        }
-
-        for (int x = 0; x < footprintSize.x; x++)
-        {
-            for (int y = 0; y < footprintSize.y; y++)
+            if (cellPos.x < 0 || cellPos.y < 0 || cellPos.x > width || cellPos.y >= height)
             {
-                BuildCell cell = buildGrid.GetGridCell(startX + x, startY + y);
+                return new BuildCheckResult(false, "Out of bounds");
+            }
 
-                if (cell.GetIsOccupied())
-                {
-                    return false;
-                }
+            if (buildGrid.GetGridCell(cellPos.x, cellPos.y).GetIsOccupied())
+            {
+                return new BuildCheckResult(false, $"Cell {cellPos} already occupied!");
             }
         }
-
-        return true;
+        return new BuildCheckResult(true, "");
     }
 
     public void SetOccupied(Vector3 worldPosition, bool occupied)
@@ -127,6 +113,11 @@ public class LevelGrid : MonoBehaviour
         Vector2 gridPos = buildGrid.GetGridPosition(worldPosition);
         BuildCell cell = buildGrid.GetGridCell((int)gridPos.x, (int)gridPos.y);
         cell.SetIsOccupied(occupied);
+    }
+
+    public GridSystem<BuildCell> GetBuildGrid()
+    {
+        return buildGrid;
     }
 
     public float GetCellSize()
